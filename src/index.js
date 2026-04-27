@@ -8,7 +8,7 @@ function updateTime() {
 
     losAngelesDateElement.innerHTML = moment().format("MMMM Do YYYY");
     losAngelesTimeElement.innerHTML = losAngelesTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      "h:mm:ss [<small>]A[</small>]",
     );
   }
 
@@ -21,7 +21,7 @@ function updateTime() {
 
     parisDateElement.innerHTML = moment().format("MMMM Do YYYY");
     parisTimeElement.innerHTML = parisTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      "h:mm:ss [<small>]A[</small>]",
     );
   }
 
@@ -33,13 +33,15 @@ function updateTime() {
     let kansasTime = moment().tz("America/Kansas");
 
     kansasDateElement.innerHTML = moment().format("MMMM Do YYYY");
-    kansasTimeElement.innerHTML = kansasTime.format("h:mm:ss [<small>]A[</small>]");
+    kansasTimeElement.innerHTML = kansasTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
   }
 }
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
-  if (cityTimeZone === "current"){
+  if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
